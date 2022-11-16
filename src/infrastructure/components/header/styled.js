@@ -1,0 +1,101 @@
+import styled from "styled-components";
+import { COLORS, SIZES } from "../../assets/styles";
+
+export const ButtonAdviser = styled.div`
+  background: ${COLORS.RED};
+  color: ${COLORS.WHITE};
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+`;
+
+export const ContainerSocial = styled.div`
+  display: flex;
+  align-items: center;
+  p {
+    margin-right: 10px;
+  }
+  img {
+    margin: 0px 5px;
+  }
+  @media ${SIZES.TABLET} {
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+`;
+
+export const SelectLink = styled.div`
+  margin: 0px 10px;
+  background: ${(props) => (props.isSelected ? COLORS.RED : "transparent")};
+  padding: 5px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  @media ${SIZES.TABLET} {
+    margin: 10px;
+  }
+`;
+
+export const ContainerLinks = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media ${SIZES.TABLET} {
+    display: block;
+  }
+`;
+
+export const ContainerTopHeader = styled.div`
+  max-width: 1920px;
+  padding: 8px 30px;
+  background: ${COLORS.BLUE};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media ${SIZES.TABLET} {
+    display: none;
+  }
+`;
+
+export const ContainerMenuMobile = styled.div`
+  position: fixed;
+  top: 80px;
+  color: ${COLORS.RED};
+  z-index: ${(props) => (props.openMenu ? 10001 : -1)};
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease-in;
+  opacity: ${(props) => (props.openMenu ? 1 : 0)};
+  padding: 30px 0px;
+  background: ${COLORS.WHITE};
+`;
+
+export const ContainerHeaderMobile = styled.div`
+  display: none;
+  @media ${SIZES.TABLET} {
+    display: block;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  div {
+    display: flex;
+  }
+`;
+
+export const ContainerHeader = styled.div`
+  max-width: 1920px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* filter: ${(props) =>
+    props.showShadow
+      ? "drop-shadow(0px 1px 0px rgba(107, 224, 160, 0.25)) drop-shadow(0px 4px 20px rgba(107, 224, 160, 0.2));"
+      : "none"}; */
+  @media ${SIZES.TABLET} {
+    display: none;
+  }
+`;
