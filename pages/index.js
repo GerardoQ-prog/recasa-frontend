@@ -4,6 +4,8 @@ import Footer from "../src/infrastructure/components/footer";
 import Header from "../src/infrastructure/components/header";
 import ServicesHome from "../src/infrastructure/components/servicesHome";
 import Statistics from "../src/infrastructure/components/statistics";
+import Testimonials from "../src/infrastructure/components/testimonials";
+import WhatsappButton from "../src/infrastructure/components/whatsappButton";
 
 const dataCarousel = [
   {
@@ -74,6 +76,8 @@ export default function Home() {
       <Carousel dataCarousel={dataCarousel} />
       <ServicesHome dataServices={dataServices} />
       <Statistics />
+      <Testimonials />
+      <WhatsappButton></WhatsappButton>
       <Footer />
     </div>
   );
