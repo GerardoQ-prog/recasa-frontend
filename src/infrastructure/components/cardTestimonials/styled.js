@@ -35,7 +35,7 @@ export const CardDescription = styled.div`
 `;
 
 export const CardTitle = styled.p`
-  font-weight: 700;
+  font-weight: 500;
   margin: 0;
   color: #736d6d;
 `;

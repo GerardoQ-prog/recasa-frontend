@@ -7,7 +7,7 @@ export const ButtonAdviser = styled.div`
   padding: 5px 10px;
   border-radius: 10px;
   cursor: pointer;
-  font-weight: 700;
+  font-weight: 500;
 `;
 
 export const ContainerSocial = styled.div`
@@ -46,7 +46,6 @@ export const ContainerLinks = styled.div`
 `;
 
 export const ContainerTopHeader = styled.div`
-  max-width: 1920px;
   padding: 8px 30px;
   background: ${COLORS.BLUE};
   display: flex;
@@ -72,6 +71,7 @@ export const ContainerMenuMobile = styled.div`
 
 export const ContainerHeaderMobile = styled.div`
   display: none;
+  box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
   @media ${SIZES.TABLET} {
     display: block;
     padding: 20px;
@@ -85,16 +85,12 @@ export const ContainerHeaderMobile = styled.div`
 `;
 
 export const ContainerHeader = styled.div`
-  max-width: 1920px;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  /* filter: ${(props) =>
-    props.showShadow
-      ? "drop-shadow(0px 1px 0px rgba(107, 224, 160, 0.25)) drop-shadow(0px 4px 20px rgba(107, 224, 160, 0.2));"
-      : "none"}; */
+  box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.25);
   @media ${SIZES.TABLET} {
     display: none;
   }

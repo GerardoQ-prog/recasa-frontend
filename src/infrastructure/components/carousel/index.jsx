@@ -43,7 +43,7 @@ const Carousel = ({ dataCarousel }) => {
             <SwiperSlide key={index}>
               <picture width="100%">
                 <source srcSet={item.imgMobile} media="(max-width: 768px)" />
-                <img src={item.img} alt="MDN" width="100%" />
+                <img src={item.img} alt="foto_banner" width="100%" />
               </picture>
               <ContainerBackdropCarousel>
                 <ContainerInformation>
@@ -51,11 +51,11 @@ const Carousel = ({ dataCarousel }) => {
                     color={COLORS.WHITE}
                     size="30px"
                     sizeMobile="24px"
-                    bold={700}
+                    bold={500}
                   >
                     {item.title}
                   </TextStyle>
-                  <TextStyle color={COLORS.WHITE} type="h2" bold={700}>
+                  <TextStyle color={COLORS.WHITE} type="h2" bold={400}>
                     {item.description}
                   </TextStyle>
                   {item.textButton && <Button>{item.textButton}</Button>}

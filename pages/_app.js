@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
   const GlobalStyle = createGlobalStyle`
 
   body,html {
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     scroll-behavior: smooth;
     padding: 0;
     margin: 0;

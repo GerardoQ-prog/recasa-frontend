@@ -9,7 +9,7 @@ export const ContainerCopy = styled.div`
 export const ContainerCertificate = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   img {
     margin: 10px;

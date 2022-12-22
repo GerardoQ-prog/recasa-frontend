@@ -33,6 +33,9 @@ export const Text = styled.p`
   margin: ${(props) => props.margin || "unset"};
   text-align: ${(props) => (props.textAlign ? props.textAlign : "start")};
   letter-spacing: ${(props) => props.letterSpacing && props.letterSpacing};
+  text-decoration: ${(props) =>
+    props.textDecoration ? props.textDecoration : "none"};
+  cursor: ${(props) => (props.cursor ? props.cursor : "auto")};
 
   @media ${SIZES.TABLET} {
     font-size: ${(props) => {

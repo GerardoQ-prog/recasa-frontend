@@ -11,7 +11,7 @@ export const ContainerTitle = styled.div`
   align-items: center;
   justify-content: center;
   padding: 20px;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 24px;
 
   @media ${SIZES.TABLET} {

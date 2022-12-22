@@ -7,23 +7,44 @@ import { Title } from "../titles";
 import { ContainerIcon } from "./styled";
 
 const Statistics = () => {
-  const [counter, setCounter] = React.useState(0);
-  const [counterTwo, setCounterTwo] = React.useState(0);
-  const [counterThree, setCounterThree] = React.useState(0);
+  const [counters, setCounters] = React.useState({
+    value: 4,
+    interval: 1,
+    initValue: 0,
+  });
+  const [countersTwo, setCountersTwo] = React.useState({
+    value: 3,
+    interval: 1,
+    initValue: 0,
+  });
+  const [countersThree, setCountersThree] = React.useState({
+    value: 3,
+    interval: 1,
+    initValue: 0,
+  });
 
-  const handleActiveCounters = () => {
-    for (let i = 0; i < 3; i++) {
-      i += 0.5;
-      setCounter(i);
-    }
+  const handlerCounters = (item, setItem) => {
+    setInterval(() => {
+      let startValue = 0;
+      let duration = Math.floor(1000 / item.value);
+      let counter = setInterval(() => {
+        startValue += item.interval;
+        setItem({
+          ...item,
+          initValue: startValue,
+        });
+        if (startValue == item.value) {
+          clearInterval(counter);
+        }
+      }, duration);
+    }, 2500);
   };
 
   React.useEffect(() => {
-    handleActiveCounters();
-    setInterval(() => {}, 2000);
+    handlerCounters(counters, setCounters);
+    handlerCounters(countersTwo, setCountersTwo);
+    handlerCounters(countersThree, setCountersThree);
   }, []);
-
-  console.log("counter", counter);
 
   return (
     <Layout>
@@ -36,10 +57,10 @@ const Statistics = () => {
             <img src="./images/ic_casa.png" />
           </ContainerIcon>
           <TextStyle
-            bold={700}
+            bold={500}
             color={COLORS.TEXT}
             textAlign="center"
-            type="h2"
+            type="h1"
           >
             Disponibilidad garantizada
           </TextStyle>
@@ -47,7 +68,7 @@ const Statistics = () => {
             bold={400}
             color={COLORS.TEXT}
             textAlign="center"
-            type="h4"
+            type="h3"
             margin="20px 0px"
           >
             Encuentra la mayor oferta de vivienda nueva en la ciudad.
@@ -58,10 +79,10 @@ const Statistics = () => {
             <img src="./images/ic_trato.png" />
           </ContainerIcon>
           <TextStyle
-            bold={700}
+            bold={500}
             color={COLORS.TEXT}
             textAlign="center"
-            type="h2"
+            type="h1"
           >
             Respaldo
           </TextStyle>
@@ -69,7 +90,7 @@ const Statistics = () => {
             bold={400}
             color={COLORS.TEXT}
             textAlign="center"
-            type="h4"
+            type="h3"
             margin="20px 0px"
           >
             ¡Eres nuestra prioridad! Evaluamos exhaustivamente nuestra oferta
@@ -81,10 +102,10 @@ const Statistics = () => {
             <img src="./images/ic_call_center.png" />
           </ContainerIcon>
           <TextStyle
-            bold={700}
+            bold={500}
             color={COLORS.TEXT}
             textAlign="center"
-            type="h2"
+            type="h1"
           >
             Asistencia
           </TextStyle>
@@ -92,7 +113,7 @@ const Statistics = () => {
             bold={400}
             color={COLORS.TEXT}
             textAlign="center"
-            type="h4"
+            type="h3"
             margin="20px 0px"
           >
             Te damos toda la información de nuestors expertos y aliados para que
@@ -104,10 +125,10 @@ const Statistics = () => {
             <img src="./images/ic_etica.png" />
           </ContainerIcon>
           <TextStyle
-            bold={700}
+            bold={500}
             color={COLORS.TEXT}
             textAlign="center"
-            type="h2"
+            type="h1"
           >
             Ética y Transparencia
           </TextStyle>
@@ -115,7 +136,7 @@ const Statistics = () => {
             bold={400}
             color={COLORS.TEXT}
             textAlign="center"
-            type="h4"
+            type="h3"
             margin="20px 0px"
           >
             La empresa y nuestros ejecutivos se guían bajo una política de
@@ -125,7 +146,7 @@ const Statistics = () => {
       </Grid>
       <TextStyle
         color={COLORS.BLUE}
-        bold={700}
+        bold={500}
         textAlign="center"
         size="40px"
         sizeMobile="30px"
@@ -135,16 +156,16 @@ const Statistics = () => {
       <Grid container style={{ margin: "30px 0px" }}>
         <Grid item xs={12} md={4} style={{ padding: 10 }}>
           <TextStyle
-            bold={900}
+            bold={600}
             color={COLORS.YELLOW}
             size="80px"
             sizeMobile="40px"
             textAlign="center"
           >
-            +4
+            +{counters.initValue}
           </TextStyle>
           <TextStyle
-            bold={700}
+            bold={500}
             color={COLORS.TEXT}
             textAlign="center"
             type="h1"
@@ -154,16 +175,16 @@ const Statistics = () => {
         </Grid>
         <Grid item xs={12} md={4} style={{ padding: 10 }}>
           <TextStyle
-            bold={900}
+            bold={600}
             color={COLORS.YELLOW}
             size="80px"
             sizeMobile="40px"
             textAlign="center"
           >
-            +2.5k
+            +{countersTwo.initValue}k
           </TextStyle>
           <TextStyle
-            bold={700}
+            bold={500}
             color={COLORS.TEXT}
             textAlign="center"
             type="h1"
@@ -173,16 +194,16 @@ const Statistics = () => {
         </Grid>
         <Grid item xs={12} md={4} style={{ padding: 10 }}>
           <TextStyle
-            bold={900}
+            bold={600}
             color={COLORS.YELLOW}
             size="80px"
             sizeMobile="40px"
             textAlign="center"
           >
-            +2.5k
+            +{countersThree.initValue}k
           </TextStyle>
           <TextStyle
-            bold={700}
+            bold={500}
             color={COLORS.TEXT}
             textAlign="center"
             type="h1"

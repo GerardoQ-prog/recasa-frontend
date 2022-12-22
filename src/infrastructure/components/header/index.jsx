@@ -39,27 +39,28 @@ const Header = () => {
     <>
       <ContainerTopHeader>
         <ContainerSocial>
-          <TextStyle type="h4" bold={700} color={COLORS.WHITE}>
+          <TextStyle type="h4" bold={500} color={COLORS.WHITE}>
             Siguenos
           </TextStyle>
-          <Link href="https://www.facebook.com" passHref>
+          <Link
+            href="https://www.facebook.com/INMOBILIARIARECASA?mibextid=ZbWKwL"
+            passHref
+          >
             <a target="_blank" rel="noopener noreferrer">
-              <img src="./images/ic_facebook.svg"></img>
+              <img src="./images/ic_facebook.svg" alt="icon_fb"></img>
             </a>
           </Link>
-          <Link href="https://www.facebook.com" passHref>
+          <Link href="https://www.instagram.com/recasainmobiliaria" passHref>
             <a target="_blank" rel="noopener noreferrer">
-              <img src="./images/ic_twitter.svg"></img>
+              <img src="./images/ic_instagram.svg" alt="icon_ig"></img>
             </a>
           </Link>
-          <Link href="https://www.facebook.com" passHref>
+          <Link
+            href="https://www.youtube.com/channel/UCNRzqPigRwlw2MqrSi4Zdpw"
+            passHref
+          >
             <a target="_blank" rel="noopener noreferrer">
-              <img src="./images/ic_linkedin.svg"></img>
-            </a>
-          </Link>
-          <Link href="https://www.facebook.com" passHref>
-            <a target="_blank" rel="noopener noreferrer">
-              <img src="./images/ic_youtube.svg"></img>
+              <img src="./images/ic_youtube.svg" alt="icon_yt"></img>
             </a>
           </Link>
         </ContainerSocial>
@@ -67,7 +68,7 @@ const Header = () => {
       </ContainerTopHeader>
       <ContainerHeader showShadow={showShadow}>
         <Link href="/">
-          <img src="./images/logo_recasa.svg" />
+          <img src="./images/logo_recasa.svg" alt="logo_recasa" />
         </Link>
         <ContainerLinks>
           <Link href="/">
@@ -75,7 +76,8 @@ const Header = () => {
               <TextStyle
                 color={router.pathname === "/" ? COLORS.WHITE : COLORS.TEXT}
                 type="h3"
-                bold={700}
+                bold={500}
+                cursor="pointer"
               >
                 Inicio
               </TextStyle>
@@ -90,29 +92,61 @@ const Header = () => {
                     : COLORS.TEXT
                 }
                 type="h3"
-                bold={700}
+                bold={500}
+                cursor="pointer"
               >
                 Inmobiliaria
               </TextStyle>
             </SelectLink>
           </Link>
+          <Link href="/servicios">
+            <SelectLink isSelected={router.pathname.includes("servicios")}>
+              <TextStyle
+                color={
+                  router.pathname.includes("servicios")
+                    ? COLORS.WHITE
+                    : COLORS.TEXT
+                }
+                type="h3"
+                bold={500}
+                cursor="pointer"
+              >
+                Servicios
+              </TextStyle>
+            </SelectLink>
+          </Link>
           <Link href="/">
             <SelectLink>
-              <TextStyle color={COLORS.TEXT} type="h3" bold={700}>
+              <TextStyle
+                color={COLORS.TEXT}
+                type="h3"
+                bold={500}
+                cursor="pointer"
+              >
                 Oficina
               </TextStyle>
             </SelectLink>
           </Link>
           <Link href="/">
             <SelectLink>
-              <TextStyle color={COLORS.TEXT} type="h3" bold={700}>
+              <TextStyle
+                color={COLORS.TEXT}
+                type="h3"
+                bold={500}
+                cursor="pointer"
+              >
                 Asesores
               </TextStyle>
             </SelectLink>
           </Link>
           <Link href="/">
             <SelectLink>
-              <TextStyle color={COLORS.TEXT} type="h3" bold={700}>
+              <TextStyle
+                color={COLORS.TEXT}
+                type="h3"
+                bold={500}
+                cursor="pointer"
+              >
                 Franquicia
               </TextStyle>
             </SelectLink>
@@ -120,18 +154,22 @@ const Header = () => {
         </ContainerLinks>
       </ContainerHeader>
       <ContainerHeaderMobile>
-        <img src="./images/logo_recasa.svg" />
+        <Link href={"/"}>
+          <img src="./images/logo_recasa.svg" alt="logo_Recasa" />
+        </Link>
         <div>
           <ButtonAdviser>Ser asesor</ButtonAdviser>
           {openMenu ? (
             <img
               src="./images/ic_close.svg"
+              alt="icon_close"
               style={{ margin: "0px 0px 0px 10px" }}
               onClick={() => setOpenMenu(!openMenu)}
             />
           ) : (
             <img
               src="./images/ic_burger.svg"
+              alt="icon_burger"
               style={{ margin: "0px 0px 0px 10px" }}
               onClick={() => setOpenMenu(!openMenu)}
             />
@@ -145,7 +183,7 @@ const Header = () => {
               <TextStyle
                 color={router.pathname === "/" ? COLORS.WHITE : COLORS.TEXT}
                 type="h3"
-                bold={700}
+                bold={500}
               >
                 Inicio
               </TextStyle>
@@ -160,56 +198,67 @@ const Header = () => {
                     : COLORS.TEXT
                 }
                 type="h3"
-                bold={700}
+                bold={500}
               >
                 Inmobiliaria
               </TextStyle>
             </SelectLink>
           </Link>
+          <Link href="/servicios">
+            <SelectLink isSelected={router.pathname.includes("servicios")}>
+              <TextStyle
+                color={
+                  router.pathname === "/servicios" ? COLORS.WHITE : COLORS.TEXT
+                }
+                type="h3"
+                bold={500}
+              >
+                Servicios
+              </TextStyle>
+            </SelectLink>
+          </Link>
           <Link href="/">
             <SelectLink>
-              <TextStyle color={COLORS.TEXT} type="h3" bold={700}>
+              <TextStyle color={COLORS.TEXT} type="h3" bold={500}>
                 Oficina
               </TextStyle>
             </SelectLink>
           </Link>
           <Link href="/">
             <SelectLink>
-              <TextStyle color={COLORS.TEXT} type="h3" bold={700}>
+              <TextStyle color={COLORS.TEXT} type="h3" bold={500}>
                 Asesores
               </TextStyle>
             </SelectLink>
           </Link>
           <Link href="/">
             <SelectLink>
-              <TextStyle color={COLORS.TEXT} type="h3" bold={700}>
+              <TextStyle color={COLORS.TEXT} type="h3" bold={500}>
                 Franquicia
               </TextStyle>
             </SelectLink>
           </Link>
         </ContainerLinks>
         <ContainerSocial>
-          <TextStyle type="h3" bold={700} color={COLORS.BLUE}>
+          <TextStyle type="h3" bold={500} color={COLORS.BLUE}>
             Siguenos
           </TextStyle>
           <Link href="https://www.facebook.com" passHref>
             <a target="_blank" rel="noopener noreferrer">
-              <img src="./images/ic_facebook.svg"></img>
+              <img src="./images/ic_facebook.svg" alt="icon_fb"></img>
             </a>
           </Link>
-          <Link href="https://www.facebook.com" passHref>
+          <Link href="https://www.instagram.com/recasainmobiliaria" passHref>
             <a target="_blank" rel="noopener noreferrer">
-              <img src="./images/ic_twitter.svg"></img>
+              <img src="./images/ic_instagram.svg" alt="icon_ig"></img>
             </a>
           </Link>
-          <Link href="https://www.facebook.com" passHref>
+          <Link
+            href="https://www.youtube.com/channel/UCNRzqPigRwlw2MqrSi4Zdpw"
+            passHref
+          >
             <a target="_blank" rel="noopener noreferrer">
-              <img src="./images/ic_linkedin.svg"></img>
-            </a>
-          </Link>
-          <Link href="https://www.facebook.com" passHref>
-            <a target="_blank" rel="noopener noreferrer">
-              <img src="./images/ic_youtube.svg"></img>
+              <img src="./images/ic_youtube.svg" alt="icon_yt"></img>
             </a>
           </Link>
         </ContainerSocial>

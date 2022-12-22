@@ -14,6 +14,8 @@ const TextStyle = ({
   type,
   size,
   sizeMobile,
+  textDecoration,
+  cursor,
 }) => {
   return (
     <Text
@@ -28,6 +30,8 @@ const TextStyle = ({
       type={type}
       size={size}
       sizeMobile={sizeMobile}
+      textDecoration={textDecoration}
+      cursor={cursor}
     >
       {children}
     </Text>

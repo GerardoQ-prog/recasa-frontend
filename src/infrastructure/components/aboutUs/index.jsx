@@ -138,7 +138,7 @@ const AboutsUs = () => {
           frameborder="0"
           scrolling="no"
           marginheight="0"
-          marginwidth="0"
+          marginWidth="0"
         ></iframe>
       </div>
     </Layout>

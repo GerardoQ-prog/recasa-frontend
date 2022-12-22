@@ -7,7 +7,7 @@ export const Button = styled.div`
   padding: 5px 10px;
   border-radius: 10px;
   cursor: pointer;
-  font-weight: 700;
+  font-weight: 500;
   width: 200px;
   height: 40px;
   display: flex;

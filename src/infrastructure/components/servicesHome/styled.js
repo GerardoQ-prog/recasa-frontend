@@ -1,28 +1,36 @@
 import styled from "styled-components";
 import { COLORS, SIZES } from "../../assets/styles";
 
+export const CotainerCard = styled.div``;
+
 export const BackgroundCard = styled.div`
   background: ${(props) => props.background || "white"};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  min-height: 390px;
+  position: relative;
   img {
-    width: 80%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
     @media ${SIZES.TABLET} {
-      height: 150px;
-      width: 150px;
+      height: 200px;
+      width: 200px;
     }
+  }
+  @media ${SIZES.TABLET} {
+    min-height: 320px;
+  }
+  @media ${SIZES.MOBILE} {
+    min-height: 300px;
   }
 `;
 
 export const ContainerCards = styled.div`
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, 270px);
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fill, 250px);
   justify-content: center;
 
-  @media ${SIZES.TABLET} {
+  @media ${SIZES.MOBILE} {
     grid-template-columns: 1fr;
   }
 `;
